@@ -1,6 +1,7 @@
 import "../topics-folder.css";
 import addIcon from "../Pics/no-category/add-icon.svg";
 import { Link } from "react-router-dom";
+
 function TopicsFolder() {
     return (
         <>
