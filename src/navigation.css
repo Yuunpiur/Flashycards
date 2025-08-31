@@ -1,0 +1,187 @@
+.hamburger-menu {
+    width: 30px;
+    height: 30px;
+
+    background-color: var(--clr--bg-color);
+   
+
+    transition: all transform 0.3s ease 0s;
+
+    margin-left: 1em;
+    right: 15px;
+
+    cursor: pointer;
+    transition: 0.4s ease-in;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 2;
+}
+
+.hamburger {
+  width: 30px;        /* total width of the icon */
+  height: 22px;       /* total height for 3 bars with spacing */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.hamburger > * {
+  width: 100%;        /* fill full hamburger width */
+  height: 3px;        /* thickness of each bar */
+  background: #333;   /* color of bars (change if your background is dark) */
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+.bar1.slide {
+    transform: rotate(45deg) translate(8px ,9px);
+}
+
+.bar2.slide
+{
+    transform: translateX(10px);
+    opacity: 0;
+}
+
+.bar3.slide{
+    transform: rotate(130deg) translate(-5px ,5px);
+}
+
+
+
+
+
+.check-box {
+    display: none;
+    visibility: hidden;
+    -webkit-appearance: none;
+}
+
+
+
+/* .three-dashes {
+    position: relative;
+    left: 5px;
+}
+
+.less-than-sign {
+    position: relative;
+    right: 8px;
+} */
+
+
+.hamburger-menu:hover {
+    border-color: black;
+    animation: shape-shifting 6s infinite;
+    
+}
+
+/* !|| NAVIGATION MENU FOR GOING TO DIFF SITES */
+.menu {
+    position: fixed;
+    top: 95px;
+    left: -15px;
+
+    background-color: rgb(248, 248, 248);
+    width: 300px;
+    height: 600px;
+
+    transform: translate(-100%, -95px);
+    transition: transform 0.3s ease;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: column wrap;
+
+    z-index: 0;
+}
+
+.menu.move-right {
+    transform: translate(14px, -95px);
+
+    visibility: visible;
+}
+
+
+.section {
+    font-weight: 900;
+    padding-block: 5em 0.5em;
+}
+
+
+
+.menu li {
+    
+    width: 200px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 10px;
+
+    margin-bottom: 1em;
+
+    list-style: none;
+    position: relative;
+    transition: all 0.3s;
+    
+    overflow: hidden;
+  
+}
+
+.menu li::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background: linear-gradient(135deg, #FFD400 50%, transparent 50%);
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in-out;
+    
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+
+.menu li span {
+    z-index: 1;
+}
+
+
+
+
+ul a {
+    display: block;
+    text-decoration: none;
+    color: black;
+
+    width: 200px;
+    height: 50px;
+
+    position: relative;
+}
+
+ul a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: lighter;
+    
+}
+
+
+html {
+    overflow-x: hidden;
+}
+
+
