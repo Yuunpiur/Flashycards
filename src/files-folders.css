@@ -1,14 +1,17 @@
-html {
-    overflow-y: hidden;
-} 
 
 
+.rectangle-2
+{
+ 
+}
 
 .rectangle-2.files-folders
 {
     height: 77vh;
     margin: 0;
     width: 100%;
+    background-color: rgb(247, 247, 247);
+    
 }
 
 .scroll-content {
@@ -162,7 +165,7 @@ html {
 .all-files {
     width: 97.5vw;
     padding-right: 0.5em;
-    background-color: white;
+    
 
 }
 
