@@ -4,42 +4,67 @@ import { Link } from "react-router-dom";
 
 import { useState } from "react";
 
-
 function TopicsFolder() {
+  const [topics, setTopic] = useState([]);
+  const [blur, setBlur] = useState(false);
+  const [text, setText] = useState("");
 
-    const [topics, setTopic] = useState([]);
+  function askTopic() {
+    // const topicName = prompt("Enter Topic Name: "); ! REPLACE THIS USING BOX INPUT
+    return text === "" || text === null
+      ? "Unnamed Folder"
+      : text;
+  }
 
-    function askTopic(){ 
-        const topicName = prompt("Enter Topic Name: ");
-        return (topicName == "")? "Unnamed Folder": topicName;
-    }
+  const addTopic = () => {
+    setTopic([...topics, askTopic()]);
+    setText("");
+  };
 
-    const addTopic = () => {setTopic([...topics, askTopic()])};
-
-    return (
-        <>
-            <div className="topics-nav">
-                <div className="add-topic" onClick={addTopic}>
-                    <img src={addIcon} alt="" width="40px" />
-                </div>
-                <div className="search-container">
-                    <input className="search-bar" type="text" placeholder="Search.." />
-                    <button className="search-button">SEARCH</button>
-                </div>
+  return (
+    <>
+      <div className={`topics-folders-container ${blur? "blur":""}`}>
+        <div className="topic-folder-container">
+          <div className="topics-nav">
+            <div className="add-topic" onClick={() => setBlur(!blur)}>
+              <img src={addIcon} alt="" width="40px" />
             </div>
-
-            <div className="topics-container">
-                <div className="scroll-content">
-                    <div className="all-topics">
-                   {topics.map((topicName, index) => (
-                    <Link to="/Files-Folders/Topics/Flashcards" className="topic" key={index}>
-                        <div className="topic-name">{topicName}</div>
-                    </Link>))}
-</div>
-                </div>
+            <div className="search-container">
+              <input
+                className="search-bar"
+                type="text"
+                placeholder="Search.."
+              />
+              <button className="search-button">SEARCH</button>
             </div>
-        </>
-    );
+          </div>
+
+          <div className="topics-container">
+            <div className="scroll-content">
+              <div className="all-topics">
+                {topics.map((topicName, index) => (
+                  <Link
+                    to="/Files-Folders/Topics/Flashcards"
+                    className="topic"
+                    key={index}
+                  >
+                    <div className="topic-name">{topicName}</div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={`topic-info ${blur? "move-up":""}`}>
+        <input className="topic-name-input" placeholder="Topic name.."value={text} onChange={(e) => setText(e.target.value)}></input>
+        <div className="topic-nav-button">
+            <div className="topic-exit-button" onClick={() => setBlur(!blur)}>EXIT</div>
+            <div className="topic-save-button" onClick={() => {setBlur(!blur); addTopic();}}>SAVE</div>
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default TopicsFolder;

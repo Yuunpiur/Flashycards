@@ -8,6 +8,7 @@
     src: url(/FlashyCard/HTML/fonts/NeueMontreal-Regular.woff2);
 }
 
+
 *,
 *::before,
 *::after {
@@ -35,6 +36,7 @@ html {
 
     z-index: 1;
     position: sticky;
+   
 }
 
 .rectangle-2 {
@@ -46,6 +48,11 @@ html {
     height: 88vh;
 
     border-radius: 5px; 
+
+    
+    
+    
+
 }
 
 .scroll-content {

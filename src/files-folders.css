@@ -1,9 +1,9 @@
-
-
-.rectangle-2
+.files-folders-container.blur
 {
- 
+    filter: blur(2px);
+    pointer-events: none;
 }
+
 
 .rectangle-2.files-folders
 {
@@ -16,7 +16,7 @@
 
 .scroll-content {
     height: 50vh;
-        overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 
@@ -343,3 +343,75 @@
 
     width: max-content;
 }
+
+
+.folder-info
+{
+    margin: 0 auto;
+    position: fixed;
+    top: 20%;
+    left: 5%;
+
+    width: 90%;
+    height: 500px;
+
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    transform: translateY(200%);
+    transition: 0.5s;
+ 
+}
+
+.folder-info.move-up
+{
+    display: flex;
+    transform: translateY(0);
+} 
+
+.folder-name
+{
+    font: inherit;
+    width: 100%;
+    height: 10%;
+    font-size: 1rem;
+
+    border: 2px solid black;
+    border-radius: 5px;
+    padding-inline: 0.5em;
+}
+
+.folder-nav-button
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+.folder-nav-button > * 
+{
+    width: 20%;
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+.folder-nav-button > *:hover
+{
+    background-color: var(--clr--gold);
+}
+
