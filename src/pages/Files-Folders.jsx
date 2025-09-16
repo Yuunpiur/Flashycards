@@ -9,26 +9,21 @@ function FilesFolder() {
   const [text, setText] = useState("");
   const [folderName, setFolderName] = useState([]);
 
-  
-
   const addFolder = () => {
     setFolderName([...folderName, askFolder()]);
     setText("");
-   
   };
   function askFolder() {
     // get the users folder name
-    // const folderName = prompt("Enter Name subject");  
-    return text === "" || text === null
-      ? "Unnamed Folder"
-      : text;
+    // const folderName = prompt("Enter Name subject");
+    return text === "" || text === null ? "Unnamed Folder" : text;
   }
 
   // move the folder info when clicked
 
   return (
     <>
-      <div className={`files-folders-container ${blur? "blur" : ""}`}>
+      <div className={`files-folders-container ${blur ? "blur" : ""}`}>
         <div className="selection-bar">
           <div className="bar-group1">
             <div className="files-folders-button" onClick={() => setBlur(!blur)}>
@@ -60,13 +55,21 @@ function FilesFolder() {
           </div>
         </div>
       </div>
-      <div className={`folder-info ${blur? "move-up" : ""}`}>
+      <div className={`folder-info ${blur ? "move-up" : ""}`}>
         <input className="folder-name" placeholder="Folder name.." value={text} onChange={(e) => setText(e.target.value)}></input>
         <div className="folder-nav-button">
-            <div className="folder-exit-button"  onClick={() => setBlur(!blur)} >EXIT</div>
-            <div className="folder-save-button" onClick={() => {setBlur(!blur);
-             addFolder();
-                 }}>SAVE</div>
+          <div className="folder-exit-button" onClick={() => setBlur(!blur)}>
+            EXIT
+          </div>
+          <div
+            className="folder-save-button"
+            onClick={() => {
+              setBlur(!blur);
+              addFolder();
+            }}
+          >
+            SAVE
+          </div>
         </div>
       </div>
     </>
