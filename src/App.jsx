@@ -5,7 +5,6 @@ import FlashcardsTerminal from "./pages/Flashcards-Terminal";
 import Navbar from "./components/Navbar";
 import LogIn from "./pages/Log-In";
 
-
 import { Route, Routes } from "react-router-dom";
 
 import "./main-page.css";
