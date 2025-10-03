@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
 import "../log-in.css";
-import lightningLogo from "../Pics/logo-Icon/lightning-icon.svg";
-
+import lightningIcon from "#logo";
 function LogIn() {
   return (
     <>
       <div className="flashycards-logo">
-        <img href={lightningLogo} className="lightning-icon" alt="shi" />
+        <img src={lightningIcon} className="lightning-icon" alt="shi" />
         <div className="flashycards-text">FlashyCards</div>
       </div>
 
