@@ -1,5 +1,5 @@
 import "../files-folders.css";
-import addFolderIcon from "../Pics/nav-icons/add-folder-icon.png";
+import addFolderIcon from "#folder-icon";
 
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -23,9 +23,11 @@ function FilesFolder() {
 
   return (
     <>
+      {/* BLUR THE BACKGROUND */}
       <div className={`files-folders-container ${blur ? "blur" : ""}`}>
         <div className="selection-bar">
           <div className="bar-group1">
+            {/* SET BLUR */}
             <div className="files-folders-button" onClick={() => setBlur(!blur)}>
               <img src={addFolderIcon} alt="" />
             </div>
@@ -34,16 +36,11 @@ function FilesFolder() {
             <input type="text" className="search-bar" placeholder="Search..." />
             <button className="search-button">SEARCH</button>
           </div>
-          {/* <d class="bar-group2">
-      <div class="add-folder">F</div>
-      <div class="add-flashcard">F</div>
-      <div class="view-type">
-          <!-- ! Folder type or list type */}
         </div>
-        {/* buttons for flashcards etc... */}
         <div className="rectangle-2 files-folders" id="rectangle-2">
           <div className="scroll-content">
             <div className="all-files">
+              {/* FETCH AND DISPLAY ALL THE FOLDERS */}
               {folderName.map((folderName, index) => (
                 <div className="file-1" key={index}>
                   <Link to="/Files-Folders/Topics" className="text-link">
@@ -55,7 +52,9 @@ function FilesFolder() {
           </div>
         </div>
       </div>
+      {/* MOVE BOX UP WHEN BLUR */}
       <div className={`folder-info ${blur ? "move-up" : ""}`}>
+        {/* TYPE THE NAME OF A FOLDER */}
         <input className="folder-name" placeholder="Folder name.." value={text} onChange={(e) => setText(e.target.value)}></input>
         <div className="folder-nav-button">
           <div className="folder-exit-button" onClick={() => setBlur(!blur)}>

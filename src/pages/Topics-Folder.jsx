@@ -20,9 +20,11 @@ function TopicsFolder() {
 
   return (
     <>
+    {/* BLUR THE BACKGROUND */}
       <div className={`topics-folders-container ${blur ? "blur" : ""}`}>
         <div className="topic-folder-container">
           <div className="topics-nav">
+            {/* SET BLUR */}
             <div className="add-topic" onClick={() => setBlur(!blur)}>
               <img src={addIcon} alt="" width="40px" />
             </div>
@@ -35,6 +37,7 @@ function TopicsFolder() {
           <div className="topics-container">
             <div className="scroll-content">
               <div className="all-topics">
+                {/* FETCH AND DISPLAY ALL THE TOPICS */}
                 {topics.map((topicName, index) => (
                   <Link to="/Files-Folders/Topics/Flashcards" className="topic" key={index}>
                     <div className="topic-name">{topicName}</div>
@@ -45,7 +48,9 @@ function TopicsFolder() {
           </div>
         </div>
       </div>
+      {/* MOVE THE BOX UP WHEN BLUR */}
       <div className={`topic-info ${blur ? "move-up" : ""}`}>
+        {/* TYPE THE NAME OF A TOPIC */}
         <input className="topic-name-input" placeholder="Topic name.." value={text} onChange={(e) => setText(e.target.value)}></input>
         <div className="topic-nav-button">
           <div className="topic-exit-button" onClick={() => setBlur(!blur)}>

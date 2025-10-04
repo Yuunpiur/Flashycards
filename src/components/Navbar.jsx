@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import lightningIcon from "../Pics/logo-Icon/lightning-icon.svg";
+import lightningIcon from "#logo";
+import mainPageIcon from "../Pics/nav-icons/main-page-icon.svg";
+import filesIcon from "../Pics/nav-icons/files-icon.svg"
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -9,6 +11,7 @@ function Navbar() {
   return (
     <div className="rectangle-1" id="rectangle-1">
       <div className="top-bar">
+        {/* HAMBURGER MENU */}
         <div className="hamburger-menu" id="hamburgerMenu" onClick={() => setClick(!click)}>
           <div className="parent">
             <div className="hamburger" onClick={() => setSlide(!slide)}>
@@ -18,18 +21,20 @@ function Navbar() {
             </div>
           </div>
         </div>
+        {/* POP UP NAVIGATION MENU */}
         <nav className={`menu ${click ? "move-right" : ""}`} id="navMenu">
-          <div className="first-section section">──────── Main Part ────────</div>
           <ul>
-            <li className="main-page">
-              <Link to="/">Main Page</Link>
-            </li>
-            <li className="files-folders">
-              <Link to="/Files-Folders">Files and Folders</Link>
-            </li>
+            <Link to="/Main-Page" className="main-page nav-text">
+              <img src={mainPageIcon} alt="" />
+              Main Page
+            </Link>
+            <Link to="/Files-Folders" className="files-folders nav-text">
+              <img src={filesIcon} alt="" />
+              Files and Folders
+            </Link>
           </ul>
-          <div className="second-section section">───── Special Features ─────</div>
         </nav>
+        {/* LIGHTNING AND TEXT LOGO */}
         <div className="logo-container">
           <div className="lightning-logo">
             <img src={lightningIcon} alt="lightning-logo" width="50" height="50" />

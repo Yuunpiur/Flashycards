@@ -4,19 +4,22 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "test": "vitest",
+    "test-run": "vitest --run",
+    "test-ui": "vitest --ui",
     "dev-vite": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "dev-node": "tsx --watch --env-file .env src/index.ts",
-    "start": "node --env-file .env dist/index.js",
+    "start": "node --env-file .env dist/src/index.js",
     "build-node": "tsc",
     "type-check": "tsc --noEmit",
     "lint-node": "eslint .",
     "lint-fix": "eslint --fix .",
     "format": "prettier --write .",
     "format-check": "prettier --check .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepare": "husky"
   },
   "dependencies": {
     "express": "^5.1.0",
@@ -37,11 +40,22 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.3.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.3",
     "prettier": "^3.6.2",
     "tsx": "^4.20.6",
     "typescript": "^5.9.2",
-    "typescript-eslint": "^8.44.1",
+    "typescript-eslint": "^8.45.0",
     "vite": "^7.1.2"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint",
+      "prettier --check"
+    ],
+    "*.{json,yml,yaml,md}": [
+      "prettier --check"
+    ]
   },
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
   "main": "eslint.config.js",
@@ -57,6 +71,8 @@
   },
   "homepage": "https://github.com/Yuunpiur/Flashycards#readme",
   "imports": {
-    "#*": "./src/*"
+    "#*": "./src/*",
+    "#logo": "./src/Pics/logo-Icon/lightning-icon.svg",
+    "#folder-icon": "./src/Pics/nav-icons/add-folder-icon.png"
   }
 }

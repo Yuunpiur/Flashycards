@@ -8,6 +8,7 @@ html {
 
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-inline: 1em;
   margin-top: 0.5em;
 }
@@ -18,6 +19,9 @@ html {
   height: 50px;
   border-radius: 10px;
   cursor: pointer;
+
+  display: flex;
+  gap: 1rem;
 }
 
 .save-button {

@@ -13,6 +13,7 @@ import "./navigation.css";
 function App() {
   return (
     <>
+      {/* Dont show the Navbar in the log in page */}
       {window.location.href === "http://localhost:5173/" ? "" : <Navbar />}
       <Routes>
         <Route path="/" element={<LogIn />}></Route>
