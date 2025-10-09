@@ -4,6 +4,7 @@ import TopicsFolder from "./pages/Topics-Folder";
 import FlashcardsTerminal from "./pages/Flashcards-Terminal";
 import Navbar from "./components/Navbar";
 import LogIn from "./pages/Log-In";
+import SignUp from "#pages/Sign-up.jsx";
 
 import { Route, Routes } from "react-router-dom";
 
@@ -14,9 +15,10 @@ function App() {
   return (
     <>
       {/* Dont show the Navbar in the log in page */}
-      {window.location.href === "http://localhost:5173/" ? "" : <Navbar />}
+      {window.location.href === "http://localhost:5173/" || window.location.href === "http://localhost:5173/Sign-Up"? "" : <Navbar />}
       <Routes>
         <Route path="/" element={<LogIn />}></Route>
+        <Route path="/Sign-Up" element={<SignUp />}></Route>
         <Route path="/Main-Page" element={<MainPage />} />
         <Route path="/Files-Folders" element={<FilesFolders />} />
         <Route path="/Files-Folders/Topics" element={<TopicsFolder />} />
