@@ -21,6 +21,14 @@
     justify-content: space-around;
 }
 
+@media (max-width: 500px) {
+  .sign-up-container
+  {
+    width: 370px;
+  }
+  
+}
+
 .sign-up {
   width: 100%;
   height: 20vh;
