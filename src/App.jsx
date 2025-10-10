@@ -14,15 +14,14 @@ import "./navigation.css";
 function App() {
   return (
     <>
-      {/* Dont show the Navbar in the log in page */}
-      {window.location.href === "http://localhost:5173/" || window.location.href === "http://localhost:5173/Sign-Up"? "" : <Navbar />}
+
       <Routes>
         <Route path="/" element={<LogIn />}></Route>
         <Route path="/Sign-Up" element={<SignUp />}></Route>
-        <Route path="/Main-Page" element={<MainPage />} />
-        <Route path="/Files-Folders" element={<FilesFolders />} />
-        <Route path="/Files-Folders/Topics" element={<TopicsFolder />} />
-        <Route path="/Files-Folders/Topics/Flashcards" element={<FlashcardsTerminal />} />
+        <Route path="/Main-Page" element={<div> <Navbar /><MainPage /></div>} />
+        <Route path="/Files-Folders" element={<div> <Navbar /><FilesFolders /></div>} />
+        <Route path="/Files-Folders/Topics" element={<div> <Navbar /><TopicsFolder /></div>} />
+        <Route path="/Files-Folders/Topics/Flashcards" element={<div> <Navbar /><FlashcardsTerminal /></div>} />
       </Routes>
     </>
   );
