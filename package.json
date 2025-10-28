@@ -2,7 +2,7 @@
   "name": "flashycards",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "test": "vitest",
     "test-run": "vitest --run",
@@ -11,7 +11,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "dev-node": "tsx --watch --env-file .env src/index.ts",
+    "dev-node": "tsx --watch --env-file .env server/server.js",
     "start": "node --env-file .env dist/src/index.js",
     "build-node": "tsc",
     "type-check": "tsc --noEmit",
@@ -22,7 +22,9 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "axios": "^1.12.2",
     "express": "^5.1.0",
+    "prompt-sync": "^4.2.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.2"

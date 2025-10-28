@@ -14,15 +14,11 @@ function SignUp() {
         <div className="sign-up">
           <input className="email-username" placeholder="Username or email" />
           <input type="password" className="password" placeholder="Password" />
+          <input type="password" className="confirm-password" placeholder="Confirm Password" />
         </div>
-        <div className="sign-up-button-container">
+        <div className="sign-up-button-and-login">
           <button className="sign-up-button">Sign Up</button>
-
-          <button className="log-in-link">
-            <Link to="/" className="log-in-link">
-              Log In
-            </Link>
-          </button>
+          <div className="go-back-login">Go back to <Link to="/" className="gold-login">Log In</Link></div>
         </div>
       </div>
     </>

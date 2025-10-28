@@ -8,13 +8,18 @@
     font-style: normal;
 }
 
+.flashycards-logo
+{
+    height: 140px;
+}
+
 
 .sign-up-container {
     border: 1px solid black;
     border-radius: 5px;
     width: 450px;
-    height: 70vh;
-    margin: 2em auto;
+    height: 65vh;
+    margin: 1em auto;
 
     display: flex;
     flex-flow: column wrap;
@@ -24,19 +29,23 @@
 @media (max-width: 500px) {
   .sign-up-container
   {
-    width: 370px;
+    width: 400px;
   }
   
 }
 
 .sign-up {
+
   width: 100%;
   height: 20vh;
 
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
   align-items: center;
   justify-content: space-around;
+
+  gap: 1rem;
+
 }
 
 .sign-up > * {
@@ -56,7 +65,7 @@
     justify-content: center;
 }
 
-.sign-up-button-container 
+.sign-up-button-and-login
 {
 
     display: flex;
@@ -64,31 +73,32 @@
     align-items: center;
     flex-flow: column wrap;
     gap: 1rem;
+
+   
     
 
 }
 
 
-.sign-up-button-container  > *
+.sign-up-button
 {
-    
     width: 70%;
     height: 50px;
     font-size: 1.5rem;
 
-    cursor: pointer;
-
-    color: black;
-    background-color: white;
-    border-radius: 3px;
-    border: 0.5px solid black;
-    transition: 0.5s;
-
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    background-color:#FDD400;
+
+    border-radius: 4px;
+    border: 0.5px solid black;
+
+    transition: 0.2s;
 
 }
+
 
 a
 {
@@ -96,10 +106,23 @@ a
     color: black;
 }
 
-.sign-up-button-container > *:hover
+.sign-up-button:hover
 {
     background-color: transparent;
-    border-radius: 3px;
-    border: 0.5px solid black;
-    background-color: #FDD400;
+    border-radius: 4px;
+    border: 0.5px solid #FDD400;
+    background-color: #ffe873;
+
+    transform: translateY(-2px);
+}
+
+.gold-login
+{
+  transition: 0.2s;
+}
+
+.gold-login:hover
+{
+  color: #FDD400;
+
 }

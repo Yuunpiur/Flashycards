@@ -1,0 +1,29 @@
+main 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+
+.image-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+
+}
+
+.image 
+{
+    width: 500px;
+    height: 450px;
+    background-color: red;
+}
+
+button 
+{
+    width: 70px;
+}

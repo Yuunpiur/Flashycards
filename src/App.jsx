@@ -8,13 +8,13 @@ import SignUp from "#pages/Sign-up.jsx";
 
 import { Route, Routes } from "react-router-dom";
 
+
 import "./main-page.css";
 import "./navigation.css";
 
 function App() {
   return (
     <>
-
       <Routes>
         <Route path="/" element={<LogIn />}></Route>
         <Route path="/Sign-Up" element={<SignUp />}></Route>
