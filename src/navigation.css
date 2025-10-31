@@ -20,18 +20,23 @@
 }
 
 .hamburger {
-  width: 30px; /* total width of the icon */
-  height: 22px; /* total height for 3 bars with spacing */
+  width: 30px;
+  /* total width of the icon */
+  height: 22px;
+  /* total height for 3 bars with spacing */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
 }
 
-.hamburger > * {
-  width: 100%; /* fill full hamburger width */
-  height: 3px; /* thickness of each bar */
-  background: #333; /* color of bars (change if your background is dark) */
+.hamburger>* {
+  width: 100%;
+  /* fill full hamburger width */
+  height: 3px;
+  /* thickness of each bar */
+  background: #333;
+  /* color of bars (change if your background is dark) */
   border-radius: 3px;
   transition: 0.3s;
 }
@@ -76,7 +81,7 @@
   top: 95px;
   left: -15px;
 
-  background-color: rgb(248, 248, 248);
+  background-color: white;
 
   height: 100%;
   width: 300px;
@@ -92,21 +97,22 @@
   background-color: white;
 
   z-index: 0;
-}
-.menu ul 
-{
-   margin-top: 5em;
+  border-radius: 10px;
+  border: 1px solid black;
+
 }
 
-nav ul a 
-{
+.menu ul {
+  margin-top: 5em;
+}
+
+nav ul a {
   width: 100%;
   margin-right: 1em;
   color: red;
 }
 
-nav img 
-{
+nav img {
   margin-right: 0.5em;
   margin-left: 0.5em;
 }
@@ -114,8 +120,10 @@ nav img
 @media (max-width: 500px) {
   .menu {
     width: 100%;
-    height: 100%;
+    height: 50%;
   }
+
+
 }
 
 .menu.move-right {
@@ -134,8 +142,7 @@ nav img
   transition: all 0.7s;
 }
 
-nav ul>*:hover
-{
+nav ul>*:hover {
   background-color: rgb(238, 238, 238);
   border-radius: 10px;
 }
@@ -153,26 +160,8 @@ nav ul>*:hover
   overflow: hidden;
 }
 
-.menu li::after {
-  content: "";
-  width: 100%;
-  height: 100%;
 
-  position: absolute;
-  top: 0;
-  left: 0;
 
-  background: linear-gradient(135deg, #ffd400 50%, transparent 50%);
-  transform: translateX(-100%);
-  transition: transform 0.4s ease-in-out;
-
-  pointer-events: none;
-  z-index: -1;
-}
-
-.menu li span {
-  z-index: 1;
-}
 
 ul a {
   display: block;
@@ -185,13 +174,29 @@ ul a {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.1s;
 
   font-weight: lighter;
   width: 100%;
   margin-bottom: 0.5em;
+  border-radius: 10px;
+}
+
+ul a:hover {
+  transform: translate(1px, -1px);
+  box-shadow: 1px 2px 3px grey;
 }
 
 
 html {
   overflow-x: hidden;
 }
+
+
+
+nav ul
+{
+  width: 90%;
+}
+
+
