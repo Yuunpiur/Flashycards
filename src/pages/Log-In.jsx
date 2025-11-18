@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import "../log-in.css";
-import visibility_off from "#pics/password/visibility-off.svg";
-import visibility_on from "#pics/password/visibility-on.svg";
-import lightningIcon from "#logo";
+import visibility_off from "../Pics/password/visibility-off.svg";
+import visibility_on from "../Pics/password/visibility-on.svg";
 import { useState } from "react";
 
 function LogIn() {
@@ -10,6 +9,8 @@ function LogIn() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+
   };
   return (
     <>

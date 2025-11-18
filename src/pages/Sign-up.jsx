@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import "../sign-up.css";
 import { useState } from "react";
-import visibility_off from "#pics/password/visibility-off.svg";
-import visibility_on from "#pics/password/visibility-on.svg";
+import visibility_off from "../Pics/password/visibility-off.svg";
+import visibility_on from "../Pics/password/visibility-on.svg";
 
 function SignUp() {
   const [userName, setUsername] = useState("");
@@ -23,17 +23,17 @@ function SignUp() {
     const response = await fetch("http://localhost:8000/createAccount", requestOptions);
     const data = await response.json();
     console.log(data.userNameExist);
-    if (data.usernameExist) {
+    if (data.usernameExist) { 
       console.log("INSIDE IF");
-      setUserNameExist(true);
-    } else {
-      console.log("INSIDE ELSE");
-      setUserNameExist(false);
-    }
+      setUserNameExist(true); } 
+    else {
+      console.log("INSIDE ELSE"); 
+      setUserNameExist(false); }
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
     sendData(event.target[0].value, event.target[1].value);
   };
 
@@ -49,14 +49,10 @@ function SignUp() {
             <div>
               <div className="username-sign sign">Username</div>
               {/* USERNAME INPUT */}
-              <input
-                className="username"
-                required
-                placeholder="Enter your username"
-                onChange={(e) => {
-                  setUsername(e.target.value);
-                }}
-              />
+              <input className="username" required placeholder="Enter your username" onChange={(e) => {
+                setUsername(e.target.value);
+                }
+              } />
             </div>
             <div className="password-group">
               <div className="password-sign sign">Password</div>
@@ -80,7 +76,7 @@ function SignUp() {
             <div className="confirm-password-group">
               <div className="confirm-password-sign sign">Confirm Password</div>
               <span
-                className="password-visibility"
+                className="confirm-password-visibility"
                 onClick={() => {
                   setConfirmPasswordVisibility(!confirmPasswordVisibility);
                 }}
@@ -108,13 +104,14 @@ function SignUp() {
             <button className="sign-up-button">Sign Up</button>
           </form>
           <div className="login-button">
+            
             <div className="go-back-login">
               Go back to{" "}
               <Link to="/" className="gold-login">
                 Log In
               </Link>
             </div>
-          </div>
+          </div> 
         </div>
       </div>
     </>
