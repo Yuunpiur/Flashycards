@@ -50,8 +50,6 @@
 
 .sign-up {
 
-
-
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -63,7 +61,7 @@
 
 }
 
-.sign-up > * {
+.sign-up input, button {
   all: unset;
   font-family: "Space Mono", monospace;
   font-weight: 400;
@@ -72,15 +70,44 @@
 
   padding: 0.5em;
   border-radius: 3px;
-  width: 300px;
-  background-color: rgb(220, 220, 220);
-   border-radius: 5px;
+  width: 400px;
+  background-color: rgb(238, 238, 238);
+  border-radius: 5px;
 }
 
-.sign-up >*:focus
+.error-message
+{
+  visibility: hidden;
+  margin-top: 0.5em;
+}
+
+.error-message.activate
+{
+  visibility: visible;
+  position: static;
+  color: red;
+}
+
+.username-exist-message
+{
+  
+  position: static;
+  color: red;
+  visibility: hidden;
+}
+
+.username-exist-message.activate
+{
+  visibility: visible;
+}
+
+
+
+.sign-up > * >*:focus
 {
   background-color: white;
-  border: 2px solid #FDD400;
+  border: 1px solid #FDD400;
+  transition: 0.3s;
 }
 
 .log-in-link
@@ -89,7 +116,7 @@
     justify-content: center;
 }
 
-.sign-up-button-and-login
+.login-button
 {
 
     display: flex;
@@ -97,10 +124,6 @@
     align-items: center;
     flex-flow: column wrap;
     gap: 1rem;
-
-   
-    
-
 }
 
 
@@ -120,9 +143,9 @@
     border: 0.5px solid black;
 
     transition: 0.2s;
+    margin-top: 5em;
 
 }
-
 
 a
 {
@@ -132,11 +155,9 @@ a
 
 .sign-up-button:hover
 {
-    background-color: transparent;
     border-radius: 4px;
-    border: 0.5px solid #FDD400;
-    background-color: #ffe873;
-
+    border: 0;
+    background-color: #eeeeee;
     transform: translateY(-2px);
 }
 
@@ -148,5 +169,36 @@ a
 .gold-login:hover
 {
   color: #FDD400;
+
+}
+
+
+.sign{
+  margin-bottom: 0.3em;
+}
+
+.password-group
+{
+  position: relative;
+}
+
+.password-visibility
+{
+   position: absolute;
+   top: 45px;
+   right: 5px;
+
+}
+
+.confirm-password-group
+{
+  position: relative;
+}
+
+.confirm-password-visibility
+{
+   position: absolute;
+   top: 45px;
+   right: 5px;
 
 }

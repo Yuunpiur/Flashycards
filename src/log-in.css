@@ -23,8 +23,6 @@
 }
 
 
-  
-
 
 .flashycards-logo
 {
@@ -35,7 +33,7 @@
 }
 
 .presentation-container {
-  width: 450px;
+
   height: 100vh;
   
   display: flex;
@@ -65,7 +63,7 @@
   background-color: white;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .log-in-container
   {
     width: 100%;
@@ -83,7 +81,7 @@
   height: 20vh;
 
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: space-around;
 }
@@ -97,10 +95,12 @@
   font-size: 1.2rem;
   padding: 0.5em;
   border-radius: 3px;
-  width: 300px;
   height: 35px;
+  width: 350px;
+  margin-bottom: 1.5em;
+  transition: 0.2s;
 
-  background-color: rgb(220, 220, 220);
+  background-color: rgb(238, 238, 238);
 
   border-radius: 5px;
 }
@@ -108,7 +108,7 @@
 .log-in input:focus
 {
   background-color: white;
-  border: 2px solid #FDD400
+  border: 2px solid #FDD400;
 }
 
 
@@ -136,14 +136,15 @@
     align-items: center;
     flex-flow: column wrap;
     gap: 1rem;
+    
 
 }
 
 
-.log-in-button-container  > *
+.log-in-button-container button
 {
     
-    width: 300px;
+    width: 350px;
     height: 50px;
     font-size: 1.5rem;
 
@@ -159,12 +160,14 @@
     align-items: center;
 }
 
-.log-in-button-container > *:hover
+
+
+.log-in-button:hover
 {
-    background-color: transparent;
+
     border-radius: 3px;
-    border: 0.5px solid #FDD400;
-    background-color: #ffe873;
+    border: 0;
+    background-color: #eeeeee;
     transform: translateY(-2px);
     
 }
@@ -172,4 +175,26 @@
 .container-2 > *
 {
   margin-bottom: 1em;
+}
+
+form .sign 
+{
+  margin-bottom: 0.5em;
+  width: 360px;
+  
+}
+
+.visibility-container
+{
+  position: relative;
+  width: 350px;
+  display: flex;
+  justify-content: right;
+}
+
+
+.visibility-container img 
+{
+  position: absolute;
+  top: 13px;
 }

@@ -5,23 +5,70 @@ import FlashcardsTerminal from "./pages/Flashcards-Terminal";
 import Navbar from "./components/Navbar";
 import LogIn from "./pages/Log-In";
 import SignUp from "#pages/Sign-up.jsx";
+import { useEffect } from "react";
 
 import { Route, Routes } from "react-router-dom";
-
 
 import "./main-page.css";
 import "./navigation.css";
 
 function App() {
+  const fetchData = async () => {
+    try {
+      const userLoginData = await fetch("http://localhost:8000/users");
+      const jsonData = await userLoginData.json();
+    } catch (err) {
+      console.log("Error");
+    }
+  }
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <>
       <Routes>
         <Route path="/" element={<LogIn />}></Route>
         <Route path="/Sign-Up" element={<SignUp />}></Route>
-        <Route path="/Main-Page" element={<div> <Navbar /><MainPage /></div>} />
-        <Route path="/Files-Folders" element={<div> <Navbar /><FilesFolders /></div>} />
-        <Route path="/Files-Folders/Topics" element={<div> <Navbar /><TopicsFolder /></div>} />
-        <Route path="/Files-Folders/Topics/Flashcards" element={<div> <Navbar /><FlashcardsTerminal /></div>} />
+        <Route
+          path="/Main-Page"
+          element={
+            <div>
+              {" "}
+              <Navbar />
+              <MainPage />``
+            </div>
+          }
+        />
+        <Route
+          path="/Files-Folders"
+          element={
+            <div>
+              {" "}
+              <Navbar />
+              <FilesFolders />
+            </div>
+          }
+        />
+        <Route
+          path="/Files-Folders/Topics"
+          element={
+            <div>
+              {" "}
+              <Navbar />
+              <TopicsFolder />
+            </div>
+          }
+        />
+        <Route
+          path="/Files-Folders/Topics/Flashcards"
+          element={
+            <div>
+              {" "}
+              <Navbar />
+              <FlashcardsTerminal />
+            </div>
+          }
+        />
       </Routes>
     </>
   );

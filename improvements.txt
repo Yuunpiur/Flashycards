@@ -1,0 +1,6 @@
+- add the show or unshow pass
+
+
+- Make all the sign up info required to user
+- Error handling
+- 
