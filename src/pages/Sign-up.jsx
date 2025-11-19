@@ -22,12 +22,10 @@ function SignUp() {
 
     const response = await fetch("http://localhost:8000/createAccount", requestOptions);
     const data = await response.json();
-    console.log(data.userNameExist);
+  
     if (data.usernameExist) { 
-      console.log("INSIDE IF");
       setUserNameExist(true); } 
     else {
-      console.log("INSIDE ELSE"); 
       setUserNameExist(false); }
   };
 

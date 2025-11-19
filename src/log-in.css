@@ -90,13 +90,13 @@
 
   all: unset;
   font-family: "Space Mono", monospace;
-  font-weight: 400;
+  font-weight: 550;
   font-style: normal;
   font-size: 1.2rem;
   padding: 0.5em;
   border-radius: 3px;
   height: 35px;
-  width: 350px;
+  width: 340px;
   margin-bottom: 1.5em;
   transition: 0.2s;
 
@@ -144,7 +144,7 @@
 .log-in-button-container button
 {
     
-    width: 350px;
+    width: 300px;
     height: 50px;
     font-size: 1.5rem;
 
@@ -197,4 +197,18 @@ form .sign
 {
   position: absolute;
   top: 13px;
+}
+
+.login-error-message
+{
+  color: red;
+  margin: 0 auto;
+  visibility: hidden;
+}
+
+
+.login-error-message.activate
+{
+  visibility: visible;
+  
 }

@@ -16,13 +16,33 @@ const db = mysql.createConnection({
     database: process.env.DATABASE
 })
 
-app.get('/users', (req, res) => {
+app.post('/users', (req, res) => {
     const sql = "SELECT * FROM login";
 
-    // Verify if the user's account exists
+    const userName = req.body.userName;
+    const userPassword = req.body.userPassword;
+    
+    // Verify if the user account exists or the password  is correct
     db.query(sql, (err, data) => {
-        if (err) console.log(res.json(err));
-        return res.json(data);
+        if(err) console.log(err);
+        let isCorrectInfo = false;
+        for(let i = 0; i < data.length; i++)
+        {
+           
+           if (userName === data[i]["username"] && userPassword === data[i]["password"]) 
+           {
+               isCorrectInfo = true;
+               break;
+           }
+            
+        }
+
+        res.setHeader('Content-Type', 'applications/json');
+
+        if(isCorrectInfo) res.send({status: true});
+        else res.send({status: false});
+
+
     })
 })
 
@@ -53,6 +73,7 @@ app.post('/createAccount', (req, res) => {
     });
 }); // check password and confirm password while the user is typing
 
+const PORT = process.env.PORT_NUMBER || 3000;
 
-app.listen(8000, () => { console.log("listening"); })
+app.listen(PORT, () => { console.log("listening"); })
 

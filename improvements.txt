@@ -1,6 +1,7 @@
-- add the show or unshow pass
-
-
-- Make all the sign up info required to user
+- Add port number to .env
+- Make it responsive for mobile devices
+- Difference between get and post, from the backend literally, i think they're the same
 - Error handling
-- 
+- Add login too many attempts
+- Add 8 chars minimum
+- weak to strong password checker

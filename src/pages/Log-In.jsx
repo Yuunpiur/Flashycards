@@ -6,10 +6,32 @@ import { useState } from "react";
 
 function LogIn() {
   const [passwordVisibility, setPasswordVisibility] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(true);
+
+  const sendData = async(userName, password) => {
+
+
+    if (userName == "" || password == "") return;
+
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ userName: userName, userPassword: password }),
+    };
+
+    const response = await fetch("http://localhost:8000/users", requestOptions);
+
+    const parsedResponse = await response.json();
+
+    console.log(parsedResponse.status);
+    if(parsedResponse.status) { setErrorMessage(true); }
+    else { setErrorMessage(false); }
+
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+    sendData(event.target[0].value, event.target[1].value);
 
   };
   return (
@@ -35,6 +57,7 @@ function LogIn() {
             </span>
             <input type={`${passwordVisibility? "text": "password"}`} className="password" placeholder="Password" />
           </div>
+            <div className={`login-error-message ${errorMessage? "":"activate"}`}>Username or password incorrect!</div>
           <div className="log-in-button-container">
             <button className="log-in-button">Log In</button>
           </div>
