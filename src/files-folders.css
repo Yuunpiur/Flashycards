@@ -1,8 +1,7 @@
-.files-folders-container.blur {
-  filter: blur(2px);
-  pointer-events: none;
-}
 
+
+
+/* ! PARENT FOLDERS BOX - GROUP*/
 .rectangle-2.files-folders {
   height: 77vh;
   margin: 0;
@@ -10,298 +9,87 @@
   background-color: rgb(247, 247, 247);
 }
 
-.scroll-content {
-  height: 50vh;
+.scroll-content-folders {
+  height: 77vh;
   overflow-x: hidden;
+  display: flex;
+  gap: 1rem;
+  flex-flow: row wrap;
+  padding: 1rem;
 }
 
+/* ? CENTER THE FOLDERS WHEN THE SCREEN IS TOO SMALL */
+@media (max-width: 786px) {
+  .scroll-content-folders {
+    justify-content: center;
+  }
+}
+
+
+/* ! NAVIGATION BAR FOR FOLDERS - GROUP */
 .selection-bar {
-  height: 10vh;
-  width: 96%;
-
   position: relative;
-  margin-left: 0.5em;
-
+  
   display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 1em;
+  gap: 3rem;
+
+  margin: 1em;
   z-index: 0;
 }
 
 .files-folders-button {
   display: flex;
-  place-content: center;
-  width: 50px;
-}
-
-.bar-group1 {
-  display: flex;
-  justify-content: flex-start;
-  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  transition: 0.3s;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-.bar-group1 > div {
-  border: 2px solid black;
-  padding-inline: 1.5em;
-  padding-block: 0.5em;
-
-  border-radius: 5px;
+.files-folders-button:hover {
+  background-color: rgb(231, 231, 231);
 }
 
-/* .bar-group2 {
-    display: flex;
-    justify-content: space-around;
-    gap: 1rem;
-}
-
-.bar-group2>div {
-    border: 2px solid black;
-    padding-inline: 1.5em;
-    padding-block: 0.5em;
-
-    border-radius: 5px;
-} */
-
-.search-bar:hover,
-.search-bar:focus {
-  border-color: var(--clr--gold);
-}
-
-.search-bar {
-  margin-right: 1em;
-}
-
-.search-bar,
-.search-button {
+.selection-bar .search-bar
+{
+  all: unset;
+  background-color: rgb(234, 234, 234);
   font: inherit;
   padding: 0.5em;
-  border: 2px solid black;
+  height: 40px;
+
   border-radius: 5px;
-
   transition: 0.5s;
-}
-
-.search-button {
-  color: black;
-  background-color: var(--clr--gold);
-  transform: translateY(-2px);
-  box-shadow: 0 4px #999;
-}
-
-.search-button:hover,
-.search-button:focus {
-  cursor: pointer;
-}
-
-.search-button:active {
-  transform: translateY(0px);
-  box-shadow: 0 2px #666;
-}
-
-.search-bar {
-  outline: none;
-}
-
-@media (max-width: 600px) {
-  .selection-bar .search-bar {
-    width: 60vw;
-  }
-}
-
-@media (max-width: 530px) {
-  .selection-bar .search-bar {
-    width: 55vw;
-  }
-}
-
-@media (max-width: 500px) {
-  .selection-bar .search-bar {
-    width: 50vw;
-  }
-}
-
-@media (max-width: 450px) {
-  .selection-bar .search-bar {
-    width: 45vw;
-  }
-}
-
-@media (max-width: 380px) {
-  .selection-bar .search-bar {
-    width: 33vw;
-  }
-}
-
-@media (max-width: 890px) {
-  .selection-bar .search-container {
-    margin: 0;
-  }
-}
-
-.all-files {
-  width: 97.5vw;
-  padding-right: 0.5em;
-}
-
-.all-files > * {
-  margin-bottom: 0.5em;
+  width: 100%;
   font-weight: bold;
-  font-size: 1.3rem;
 
-  cursor: pointer;
 }
+
+
+/* ! FOLDERS */
+.file-1
+{
+  background-color: #f1eeee;
+  height: 250px;
+  width: 250px;
+}
+
 
 .title {
-  border: 2px solid black;
+
   padding-block: 0.4em;
   padding-inline: 1em;
   border-radius: 5px;
-  background-color: #f1eeee;
 
-  width: 100%;
+  margin-bottom: 1rem;
   transition: 0.3s;
 }
 
-@media (max-width: 1500px) {
-  .all-files {
-    width: 97vw;
-  }
-}
-
-@media (max-width: 5000px) {
-  .all-files {
-    width: 96vw;
-  }
-}
-
-.toggle {
-  gap: 1rem;
-  flex: 1;
-}
-
-@keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-}
-
-.feature-buttons {
-  width: 100%;
-  height: 50px;
-
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  visibility: hidden;
-
-  transition: all 0.5s;
-}
-
-.feature-buttons > a {
-  text-decoration: none;
-  color: black;
-
-  border: 2px solid black;
-  border-radius: 5px;
-  width: 32%;
-  height: 50px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  transition: all 0.5s;
-  top: 0;
-  left: 0;
-
-  transform: translateY(-100px);
-}
-
-@keyframes shake {
-  0% {
-    transform: translateY(10px) rotate(-1deg);
-  }
-  50% {
-    transform: translateY(10px) rotate(1deg);
-  }
-  100% {
-    transform: translateY(10px) rotate(-1deg);
-  }
-}
-
-.feature-buttons a:hover {
-  animation: shake 0.5s infinite;
-  background-color: #ffd400;
-  border: 2px solid grey;
-  box-shadow: 1px 1px 5px #ffd400;
-}
-
-@keyframes bounce-buttons {
-  0%,
-  100% {
-    transform: translateY(10px);
-  }
-  25% {
-    transform: translateY(20px);
-  }
-  50% {
-    transform: translateY(0);
-  }
-}
-
-.first-button.pop-up {
-  visibility: visible;
-  transform: translateY(10px);
-  transition: 0.3s;
-  animation: bounce-buttons 0.3s 0.1s 1;
-}
-
-.second-button.pop-up {
-  visibility: visible;
-  transform: translateY(10px);
-  transition: 0.8s;
-  animation: bounce-buttons 0.3s 0.4s 1;
-}
-
-.third-button.pop-up {
-  visibility: visible;
-  transform: translateY(10px);
-  transition: 1.3s;
-  animation: bounce-buttons 0.3s 0.9s 1;
-}
-
-.rectangle-3 {
-  width: 100%;
-  height: 50px;
-  position: relative;
-  top: 10px;
-  left: 0px;
-
-  z-index: -1;
-}
-
-@media (max-width: 550px) {
-  .feature-buttons > * {
-    font-size: 0.9rem;
-  }
-}
-
-.text-link {
-  text-decoration: none;
-  color: black;
-
-  width: max-content;
+/* ! FLOATING BOX - GROUP*/
+.files-folders-container.blur {
+  filter: blur(2px);
+  pointer-events: none;
 }
 
 .folder-info {
@@ -310,12 +98,14 @@
   top: 20%;
   left: 5%;
 
-  width: 90%;
+  width: 90vw;
   height: 500px;
+  border: 2px solid black;
 
   background-color: white;
-  border: 2px solid black;
+
   border-radius: 10px;
+ 
 
   display: flex;
   flex-flow: column nowrap;
@@ -332,12 +122,14 @@
 }
 
 .folder-name {
+  all: unset;
   font: inherit;
   width: 100%;
   height: 10%;
   font-size: 1rem;
+  font-weight: bold;
+  background-color: rgb(245, 245, 245);
 
-  border: 2px solid black;
   border-radius: 5px;
   padding-inline: 0.5em;
 }
@@ -346,16 +138,18 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  
 }
 
 .folder-nav-button > * {
   width: 20%;
   height: 40px;
   border: 2px solid black;
-  border-radius: 5px;
+  border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: bold;
 
   cursor: pointer;
   transition: 0.7s;

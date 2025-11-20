@@ -25,11 +25,11 @@ function Navbar() {
         <nav className={`menu ${click ? "move-right" : ""}`} id="navMenu">
           <ul>
             <Link to="/Main-Page" className="main-page nav-text">
-              <img src={mainPageIcon} alt="" />
+              <img src={mainPageIcon} alt="" width={30} height={30}/>
               Main Page
             </Link>
             <Link to="/Files-Folders" className="files-folders nav-text">
-              <img src={filesIcon} alt="" />
+              <img src={filesIcon} alt="" width={30} height={30}/>
               Files and Folders
             </Link>
           </ul>

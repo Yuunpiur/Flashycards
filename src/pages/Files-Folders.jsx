@@ -26,20 +26,23 @@ function FilesFolder() {
       {/* BLUR THE BACKGROUND */}
       <div className={`files-folders-container ${blur ? "blur" : ""}`}>
         <div className="selection-bar">
-          <div className="bar-group1">
-            {/* SET BLUR */}
+          {/* <div className="bar-group1">
+            
             <div className="files-folders-button" onClick={() => setBlur(!blur)}>
               <img src={addFolderIcon} alt="" />
             </div>
-          </div>
-          <div className="search-container">
+          </div> */}
+          <div className="files-folders-button" onClick={() => setBlur(!blur)}>
+              <img src={addFolderIcon} alt="" width={35} height={35}/>
+            </div>
+    
             <input type="text" className="search-bar" placeholder="Search..." />
-            <button className="search-button">SEARCH</button>
-          </div>
+          {/*   <button className="search-button">SEARCH</button> */}
+         
         </div>
         <div className="rectangle-2 files-folders" id="rectangle-2">
-          <div className="scroll-content">
-            <div className="all-files">
+          <div className="scroll-content-folders">
+            
               {/* FETCH AND DISPLAY ALL THE FOLDERS */}
               {folderName.map((folderName, index) => (
                 <div className="file-1" key={index}>
@@ -48,7 +51,6 @@ function FilesFolder() {
                   </Link>
                 </div>
               ))}
-            </div>
           </div>
         </div>
       </div>

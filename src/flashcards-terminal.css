@@ -44,13 +44,7 @@ html {
   overflow-x: hidden;
 }
 
-.scroll-content {
-  margin-top: 0.5em;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  height: 100%;
-}
+
 
 .card-container {
   width: 90%;

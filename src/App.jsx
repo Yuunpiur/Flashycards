@@ -33,9 +33,8 @@ function App() {
           path="/Main-Page"
           element={
             <div>
-              {" "}
               <Navbar />
-              <MainPage />``
+              <MainPage />
             </div>
           }
         />

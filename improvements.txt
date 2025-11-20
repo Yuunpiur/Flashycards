@@ -1,7 +1,29 @@
-- Add port number to .env
-- Make it responsive for mobile devices
-- Difference between get and post, from the backend literally, i think they're the same
-- Error handling
+* Tips
+- Reuse components 
+- Reuse backend codes
+- Error handling when needed
+
 - Add login too many attempts
-- Add 8 chars minimum
-- weak to strong password checker
+
+BIG SHI
+- DESIGN MENU NAVIGATION
+
+
+DESIGN FOR FOLDERS, TOPICS, AND FLASHCARDS
+- Copy flashycards search  bar design
+- Make new designs for 
+ - folders 
+ - topics 
+ - flashcards
+ AGAIN MAKE IT RESPONSIVE, ESP FOR MOBILE
+
+CRUD OPERATIONS FOR FOLDERS, TOPICS, AND FLASHCARDS
+- Make the user add folders, topics and flashcards.. then save it from the database, 
+
+- Connect it to a cloud database
+
+Micro shiz
+- PASSWORD
+ - Add 8 chars minimum
+ - Weak to strong password checker
+

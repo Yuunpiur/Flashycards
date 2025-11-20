@@ -41,19 +41,6 @@
   transition: 0.3s;
 }
 
-.bar1.slide {
-  transform: rotate(45deg) translate(8px, 9px);
-}
-
-.bar2.slide {
-  transform: translateX(10px);
-  opacity: 0;
-}
-
-.bar3.slide {
-  transform: rotate(130deg) translate(-5px, 5px);
-}
-
 .check-box {
   display: none;
   visibility: hidden;
@@ -109,7 +96,7 @@
 nav ul a {
   width: 100%;
   margin-right: 1em;
-  color: red;
+  color: black;
 }
 
 nav img {
@@ -143,7 +130,6 @@ nav img {
 }
 
 nav ul>*:hover {
-  background-color: rgb(238, 238, 238);
   border-radius: 10px;
 }
 
@@ -176,16 +162,12 @@ ul a {
   align-items: center;
   transition: 0.1s;
 
-  font-weight: lighter;
+  font-weight: 550;
   width: 100%;
   margin-bottom: 0.5em;
   border-radius: 10px;
 }
 
-ul a:hover {
-  transform: translate(1px, -1px);
-  box-shadow: 1px 2px 3px grey;
-}
 
 
 html {
