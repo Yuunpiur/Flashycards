@@ -91,6 +91,17 @@
   }
 }
 
+@media (max-width: 400px) {
+  .scroll-content-folders {
+    justify-content: left;
+  }
+  .file-1 
+  {
+    width: 160px;
+    height: 160px;
+  }
+}
+
 
 .title {
 
