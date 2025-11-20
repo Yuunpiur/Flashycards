@@ -2,21 +2,12 @@ import "../topics-folder.css";
 import addIcon from "../Pics/no-category/add-icon.svg";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import DetailsContainer from "#components/Details-container.jsx";
 
 function TopicsFolder() {
   const [topics, setTopic] = useState([]);
   const [blur, setBlur] = useState(false);
-  const [text, setText] = useState("");
 
-  function askTopic() {
-    // const topicName = prompt("Enter Topic Name: "); ! REPLACE THIS USING BOX INPUT
-    return text === "" || text === null ? "Unnamed Folder" : text;
-  }
-
-  const addTopic = () => {
-    setTopic([...topics, askTopic()]);
-    setText("");
-  };
 
   return (
     <>
@@ -49,24 +40,7 @@ function TopicsFolder() {
         </div>
       </div>
       {/* MOVE THE BOX UP WHEN BLUR */}
-      <div className={`topic-info ${blur ? "move-up" : ""}`}>
-        {/* TYPE THE NAME OF A TOPIC */}
-        <input className="topic-name-input" placeholder="Topic name.." value={text} onChange={(e) => setText(e.target.value)}></input>
-        <div className="topic-nav-button">
-          <div className="topic-exit-button" onClick={() => setBlur(!blur)}>
-            EXIT
-          </div>
-          <div
-            className="topic-save-button"
-            onClick={() => {
-              setBlur(!blur);
-              addTopic();
-            }}
-          >
-            SAVE
-          </div>
-        </div>
-      </div>
+      <DetailsContainer blur={blur} setBlur={setBlur} topics={topics} setTopic={setTopic}/>
     </>
   );
 }

@@ -1,0 +1,72 @@
+/* ! FLOATING BOX - GROUP */
+.files-folders-container.blur {
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.folder-info {
+  margin: 0 auto;
+  position: fixed;
+  top: 20%;
+  left: 5%;
+
+  width: 90vw;
+  height: 500px;
+  border: 2px solid black;
+
+  background-color: white;
+
+  border-radius: 10px;
+ 
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  transform: translateY(200%);
+  transition: 0.5s;
+}
+
+.folder-info.move-up {
+  display: flex;
+  transform: translateY(0);
+}
+
+.folder-name {
+  all: unset;
+  font: inherit;
+  width: 100%;
+  height: 10%;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: rgb(245, 245, 245);
+
+  border-radius: 5px;
+  padding-inline: 0.5em;
+}
+
+.folder-nav-button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.folder-nav-button > * {
+  width: 20%;
+  height: 40px;
+  border: 2px solid black;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: 0.7s;
+}
+
+.folder-nav-button > *:hover {
+  background-color: var(--clr--gold);
+}

@@ -1,23 +1,14 @@
 import "../files-folders.css";
 import addFolderIcon from "#folder-icon";
+import DetailsContainer from "#components/Details-container.jsx";
 
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function FilesFolder() {
   const [blur, setBlur] = useState(false);
-  const [text, setText] = useState("");
   const [folderName, setFolderName] = useState([]);
 
-  const addFolder = () => {
-    setFolderName([...folderName, askFolder()]);
-    setText("");
-  };
-  function askFolder() {
-    // get the users folder name
-    // const folderName = prompt("Enter Name subject");
-    return text === "" || text === null ? "Unnamed Folder" : text;
-  }
 
   // move the folder info when clicked
 
@@ -33,46 +24,26 @@ function FilesFolder() {
             </div>
           </div> */}
           <div className="files-folders-button" onClick={() => setBlur(!blur)}>
-              <img src={addFolderIcon} alt="" width={35} height={35}/>
-            </div>
-    
-            <input type="text" className="search-bar" placeholder="Search..." />
+            <img src={addFolderIcon} alt="" width={35} height={35} />
+          </div>
+
+          <input type="text" className="search-bar" placeholder="Search..." />
           {/*   <button className="search-button">SEARCH</button> */}
-         
         </div>
         <div className="rectangle-2 files-folders" id="rectangle-2">
           <div className="scroll-content-folders">
-            
-              {/* FETCH AND DISPLAY ALL THE FOLDERS */}
-              {folderName.map((folderName, index) => (
-                <div className="file-1" key={index}>
-                  <Link to="/Files-Folders/Topics" className="text-link">
-                    <div className="file-1-title title">{folderName}</div>
-                  </Link>
-                </div>
-              ))}
+            {/* FETCH AND DISPLAY ALL THE FOLDERS */}
+            {folderName.map((folderName, index) => (
+              <div className="file-1" key={index}>
+                <Link to="/Files-Folders/Topics" className="text-link">
+                  <div className="file-1-title title">{folderName}</div>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </div>
-      {/* MOVE BOX UP WHEN BLUR */}
-      <div className={`folder-info ${blur ? "move-up" : ""}`}>
-        {/* TYPE THE NAME OF A FOLDER */}
-        <input className="folder-name" placeholder="Folder name.." value={text} onChange={(e) => setText(e.target.value)}></input>
-        <div className="folder-nav-button">
-          <div className="folder-exit-button" onClick={() => setBlur(!blur)}>
-            EXIT
-          </div>
-          <div
-            className="folder-save-button"
-            onClick={() => {
-              setBlur(!blur);
-              addFolder();
-            }}
-          >
-            SAVE
-          </div>
-        </div>
-      </div>
+      <DetailsContainer blur={blur} setBlur={setBlur} folderName={folderName} setFolderName={setFolderName}/>
     </>
   );
 }
