@@ -3,6 +3,7 @@ import addIcon from "../Pics/no-category/add-icon.svg";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import DetailsContainer from "#components/Details-container.jsx";
+import Searchbar from "#components/Searchbar.jsx";
 
 function TopicsFolder() {
   const [topics, setTopic] = useState([]);
@@ -14,15 +15,9 @@ function TopicsFolder() {
     {/* BLUR THE BACKGROUND */}
       <div className={`topics-folders-container ${blur ? "blur" : ""}`}>
         <div className="topic-folder-container">
-          <div className="topics-nav">
+          <div className="selection-bar">
             {/* SET BLUR */}
-            <div className="add-topic" onClick={() => setBlur(!blur)}>
-              <img src={addIcon} alt="" width="40px" />
-            </div>
-            <div className="search-container">
-              <input className="search-bar" type="text" placeholder="Search.." />
-              <button className="search-button">SEARCH</button>
-            </div>
+            <Searchbar icon={addIcon} blur={blur} setBlur={setBlur}/>
           </div>
 
           <div className="topics-container">

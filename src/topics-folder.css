@@ -11,49 +11,18 @@
   pointer-events: none;
 }
 
-.topics-nav {
-  margin-top: 1em;
-
-  display: flex;
-  justify-content: space-between;
-  padding-inline: 0.5em;
-  align-items: center;
-}
-
-.add-topic {
-  width: 45px;
-  height: 45px;
-  border: 2px solid black;
-  border-radius: 5px;
-
-  cursor: pointer;
-}
-
-.topics-nav .search-container {
-  margin: 0;
-}
-
-.search-container input {
-  height: 40px;
-  width: 50vw;
-}
-
-.search-container button {
-  height: 40px;
-  width: 80px;
-}
 
 .topics-container {
   height: 80vh;
 }
 
-.scroll-content {
+/* .scroll-content {
   margin-top: 1em;
   margin-inline: 0.5em;
   width: 97%;
   overflow-y: auto;
   height: 80vh;
-}
+} */
 
 .topics-container .topic {
   width: 100%;

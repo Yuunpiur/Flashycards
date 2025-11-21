@@ -13,17 +13,7 @@ import "./main-page.css";
 import "./navigation.css";
 
 function App() {
-  const fetchData = async () => {
-    try {
-      const userLoginData = await fetch("http://localhost:8000/users");
-      const jsonData = await userLoginData.json();
-    } catch (err) {
-      console.log("Error");
-    }
-  }
-  useEffect(() => {
-    fetchData();
-  }, []);
+  
   return (
     <>
       <Routes>

@@ -1,0 +1,41 @@
+/* ! NAVIGATION BAR FOR FOLDERS - GROUP */
+.selection-bar {
+  position: relative;
+
+  
+  display: flex;
+  gap: 3rem;
+
+  margin: 1em;
+  z-index: 0;
+}
+
+.files-folders-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  transition: 0.3s;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+
+.files-folders-button:hover {
+  background-color: rgb(231, 231, 231);
+}
+
+.selection-bar .search-bar
+{
+  all: unset;
+  background-color: rgb(234, 234, 234);
+  font: inherit;
+  padding: 0.5em 1em;
+  height: 30px;
+
+  border-radius: 5px;
+  transition: 0.5s;
+  width: 100%;
+  font-weight: bold;
+
+}

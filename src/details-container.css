@@ -26,10 +26,12 @@
   padding: 1em;
   transform: translateY(200%);
   transition: 0.5s;
+  visibility: hidden;
 }
 
 .folder-info.move-up {
   display: flex;
+  visibility: visible;
   transform: translateY(0);
 }
 
