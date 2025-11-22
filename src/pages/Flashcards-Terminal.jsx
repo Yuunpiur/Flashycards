@@ -1,47 +1,46 @@
 import { useState } from "react";
 import "../flashcards-terminal.css";
 
-import plusIcon from "../Pics/no-category/add-icon.svg";
-
 function FlashCardTerminal() {
   const [flashcards, setFlashcards] = useState([]);
-  const [count, setCount] = useState(0);
 
-  const addCard = () => {
-    setFlashcards([...flashcards, ""]);
+  const saveCardtoDB = () => {};
+
+  const addCard = (front, back) => {
+    setFlashcards([[front, back], ...flashcards]);
   };
 
-  const incrementCounter = () => {
-    setCount(count + 1);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // event.target.elements[0].value;
+    // event.target.elements[1].value;
+    addCard(event.target.elements[0].value, event.target.elements[1].value);
   };
 
   return (
     <>
-      <div className="flashcards-nav">
-        <div
-          className="add-card"
-          onClick={() => {
-            addCard();
-            incrementCounter();
-          }}
-        >
-          <img src={plusIcon} alt="" width="45px" />
+      <form className="parent-container-flashcards" onSubmit={handleSubmit}>
+        <div className="flashcards-container">
+          <textarea placeholder="Enter the front" type="text" className="front"></textarea>
+          <div className="divider"></div>
+          <textarea placeholder="Enter the back" type="text" className="back"></textarea>
         </div>
-        <div className="flashcards-counter">{`Flashcards: ${count}`}</div>
-        <button className="save-button">SAVE</button>
-      </div>
+        <div className="save-settings">
+          <button className="vacant1"></button>
+          <button className="vacant2"></button>
+          <button className="add-flashcard-btn">Save</button>
+        </div>
 
-      <div class="Flashcards">
-        <div className="scroll-content">
-          {/* FETCH AND DISPLAY ALL THE CARDS */}
-          {flashcards.map((index) => (
-            <div className="card-container" key={index}>
-              <input type="text" className="keyword"></input>
-              <textarea type="text" className="definition"></textarea>
-            </div>
-          ))}
-        </div>
-      </div>
+        <div className="recent-flashcard-tag">Recent flashcards</div>
+        <div className="flashcards"></div>
+        {flashcards.map((flashcards, index) => (
+          <div className="saved-flashcards" key={index}>
+            <div className="saved-front">{flashcards[0]}</div>
+            <div className="divider"></div>
+            <div className="saved-back">{flashcards[1]}</div>
+          </div>
+        ))}
+      </form>
     </>
   );
 }

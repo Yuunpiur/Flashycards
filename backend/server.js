@@ -1,4 +1,4 @@
-require('dotenv').config({ path: "../"});
+require('dotenv').config({ path: "../" });
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
@@ -12,66 +12,61 @@ app.use(express.json()); // parses json
 const db = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD, 
+    password: process.env.DB_PASSWORD,
     database: process.env.DATABASE
 })
 
 app.post('/users', (req, res) => {
-    const sql = "SELECT * FROM login";
 
     const userName = req.body.userName;
     const userPassword = req.body.userPassword;
-    
-    // Verify if the user account exists or the password  is correct
-    db.query(sql, (err, data) => {
-        if(err) console.log(err);
-        let isCorrectInfo = false;
-        for(let i = 0; i < data.length; i++)
-        {
-           
-           if (userName === data[i]["username"] && userPassword === data[i]["password"]) 
-           {
-               isCorrectInfo = true;
-               break;
-           }
-            
+
+    const sql = "SELECT username, password FROM login WHERE username = ? AND password = ? ";
+
+    // Verify if the user doesn't account exists or the password  is incorrect
+    db.query(sql, [userName, userPassword], (err, data) => {
+        if (err) console.log(err);
+
+        res.setHeader('Content-Type', 'application/json');
+        if (data === undefined || data.length === 0) {
+            res.send({ status: false });
         }
-
-        res.setHeader('Content-Type', 'applications/json');
-
-        if(isCorrectInfo) res.send({status: true});
-        else res.send({status: false});
-
-
+        else {
+            res.send({ status: true });
+        }
     })
 })
 
 app.post('/createAccount', (req, res) => {
 
     // check if username already exist
-    let userNameExist = false;
-    db.query("SELECT username FROM login", (err, data) => {
-        if (err) console.log("ERROR");
-        for (let i = 0; i < data.length; i++) {
-            if (data[i]["username"] === req.body.userName) {
-                console.log("EXIST");
+    const username = req.body.userName;
+    const sql = "SELECT username FROM login WHERE username = ?";
 
-                res.setHeader('Content-Type', 'text/html');
-                res.send({ usernameExist: true });
-                userNameExist = true;
-            }
+
+    db.query(sql, username, (err, data) => {
+        if (err) console.log(err);
+        if (data.length > 0) {
+            res.setHeader('Content-Type', 'application/json');
+            res.send({usernameExist: true});
+            return;
         }
-
-        if (!userNameExist) {
-            // add a new user to the database
+        else 
+        {
             const sql = "INSERT INTO login (username, password) VALUES(?, ?)";
             const userInfo = [req.body.userName, req.body.userPassword];
             db.query(sql, userInfo, (err) => {
                 if (err) console.log(err);
-            })
+                res.setHeader('Content-Type', 'application/json');
+                res.send({ usernameExist: false });
+                return;
+            });
+
         }
     });
-}); // check password and confirm password while the user is typing
+
+
+});
 
 const PORT = process.env.PORT_NUMBER || 3000;
 

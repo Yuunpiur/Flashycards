@@ -34,7 +34,7 @@ function FilesFolder() {
           </div>
         </div>
       </div>
-      <DetailsContainer blur={blur} setBlur={setBlur} folderName={folderName} setFolderName={setFolderName}/>
+      <DetailsContainer blur={blur} setBlur={setBlur} folderName={folderName} setFolderName={setFolderName} category={"folders"}/>
     </>
   );
 }

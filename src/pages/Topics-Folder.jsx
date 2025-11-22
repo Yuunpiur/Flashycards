@@ -20,22 +20,20 @@ function TopicsFolder() {
             <Searchbar icon={addIcon} blur={blur} setBlur={setBlur}/>
           </div>
 
-          <div className="topics-container">
-            <div className="scroll-content">
-              <div className="all-topics">
+    
+            <div className="scroll-content-topics">
                 {/* FETCH AND DISPLAY ALL THE TOPICS */}
                 {topics.map((topicName, index) => (
                   <Link to="/Files-Folders/Topics/Flashcards" className="topic" key={index}>
+                    <div className="topic-color"></div>
                     <div className="topic-name">{topicName}</div>
                   </Link>
                 ))}
-              </div>
             </div>
           </div>
-        </div>
       </div>
       {/* MOVE THE BOX UP WHEN BLUR */}
-      <DetailsContainer blur={blur} setBlur={setBlur} topics={topics} setTopic={setTopic}/>
+      <DetailsContainer blur={blur} setBlur={setBlur} folderName={topics} setFolderName={setTopic} category={"topics"}/>
     </>
   );
 }

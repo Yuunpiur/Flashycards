@@ -13,26 +13,30 @@ function SignUp() {
   const [passwordVisibility, setPasswordVisibility] = useState(false);
   const [confirmPasswordVisibility, setConfirmPasswordVisibility] = useState(false);
 
-  const sendData = async (userName, password) => {
-    const requestOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ userName: userName, userPassword: password }),
-    };
+  const saveData = async () => {
+    try {
+      const requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userName: userName, userPassword: password }),
+      };
 
-    const response = await fetch("http://localhost:8000/createAccount", requestOptions);
-    const data = await response.json();
-  
-    if (data.usernameExist) { 
-      setUserNameExist(true); } 
-    else {
-      setUserNameExist(false); }
+      const response = await fetch("http://localhost:8000/createAccount", requestOptions);
+      const data = await response.json();
+
+      if (data.usernameExist) {
+        setUserNameExist(true);
+      } else {
+        setUserNameExist(false);
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    sendData(event.target[0].value, event.target[1].value);
+    saveData();
   };
 
   return (
@@ -47,10 +51,14 @@ function SignUp() {
             <div>
               <div className="username-sign sign">Username</div>
               {/* USERNAME INPUT */}
-              <input className="username" required placeholder="Enter your username" onChange={(e) => {
-                setUsername(e.target.value);
-                }
-              } />
+              <input
+                className="username"
+                required
+                placeholder="Enter your username"
+                onChange={(e) => {
+                  setUsername(e.target.value);
+                }}
+              />
             </div>
             <div className="password-group">
               <div className="password-sign sign">Password</div>
@@ -89,7 +97,6 @@ function SignUp() {
                 placeholder="Confirm your password"
                 onChange={(e) => {
                   setConfirmPassword(e.target.value);
-                  console.log(passwordConfirm);
                   // if confirm pass is empty or pass equals to confirm pass
                   if (e.target.value === "" || e.target.value === password) setErrorMessage(false);
                   else if (e.target.value != password) setErrorMessage(true);
@@ -102,14 +109,13 @@ function SignUp() {
             <button className="sign-up-button">Sign Up</button>
           </form>
           <div className="login-button">
-            
             <div className="go-back-login">
               Go back to{" "}
               <Link to="/" className="gold-login">
                 Log In
               </Link>
             </div>
-          </div> 
+          </div>
         </div>
       </div>
     </>

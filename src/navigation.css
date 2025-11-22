@@ -76,7 +76,7 @@
 
   transform: translate(-100%, -95px);
   transition: transform 0.3s ease;
-
+  border: 1px solid #dedede;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -112,7 +112,7 @@ nav img {
   color: rgb(88, 88, 88);
   font-size: 1.1rem;
   justify-content: left;
-  transition: all 0.7s;
+  transition: all 0.2s;
 }
 
 .nav-text:hover {

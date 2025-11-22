@@ -203,6 +203,9 @@ form .sign
   color: red;
   margin: 0 auto;
   visibility: hidden;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5em;
 }
 
 

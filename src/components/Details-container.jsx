@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../details-container.css";
 
-function DetailsContainer({blur, setBlur, folderName, setFolderName}) {
+function DetailsContainer({blur, setBlur, folderName, setFolderName, category}) {
   const [text, setText] = useState("");
   
   const askFolder = () => {
@@ -18,7 +18,7 @@ function DetailsContainer({blur, setBlur, folderName, setFolderName}) {
       {/* MOVE BOX UP WHEN BLUR */}
       <div className={`folder-info ${blur ? "move-up" : ""}`}>
         {/* TYPE THE NAME OF A FOLDER */}
-        <input className="folder-name" placeholder="Folder name.." value={text} onChange={(e) => setText(e.target.value)}></input>
+        <input className="folder-name" placeholder={category === "folders" ? "Folder name.." : "Topic name.."} value={text} onChange={(e) => setText(e.target.value)}></input>
         <div className="folder-nav-button">
           <div className="folder-exit-button" onClick={() => setBlur(!blur)}>
             EXIT
