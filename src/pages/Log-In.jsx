@@ -47,9 +47,9 @@ function LogIn() {
         <form className="log-in-container" onSubmit={handleSubmit}>
           <div className="log-in">
             {/* PASSWORD INPUT */}
-            <div className="username-sign sign">Username</div>
+            <div className="login-username-sign login-sign">Username</div>
             <input className="username" placeholder="Enter username" onChange={(e) => setUsername(e.target.value)}/>
-            <div className="password-sign sign">Password</div>
+            <div className="login-password-sign login-sign">Password</div>
             <span
               className="visibility-container"
               onClick={() => {

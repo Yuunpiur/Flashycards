@@ -44,7 +44,7 @@ app.post('/createAccount', (req, res) => {
     const sql = "SELECT username FROM login WHERE username = ?";
 
 
-    db.query(sql, username, (err, data) => {
+    db.query(sql, [username], (err, data) => {
         if (err) console.log(err);
         if (data.length > 0) {
             res.setHeader('Content-Type', 'application/json');

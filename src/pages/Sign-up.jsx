@@ -49,7 +49,7 @@ function SignUp() {
         <div className="sign-up-container">
           <form className="sign-up" onSubmit={handleSubmit}>
             <div>
-              <div className="username-sign sign">Username</div>
+              <div className="sign-up-username-sign sign-up-sign">Username</div>
               {/* USERNAME INPUT */}
               <input
                 className="username"
@@ -61,14 +61,14 @@ function SignUp() {
               />
             </div>
             <div className="password-group">
-              <div className="password-sign sign">Password</div>
+              <div className="sign-up-password-sign sign-up-sign">Password</div>
               <span
                 className="password-visibility"
                 onClick={() => {
                   setPasswordVisibility(!passwordVisibility);
                 }}
               >
-                <img src={`${passwordVisibility ? visibility_on : visibility_off}`} alt="" />
+                <img className="password-visibility-icon" src={`${passwordVisibility ? visibility_on : visibility_off}`} alt="" />
               </span>
               {/* PASSWORD INPUT */}
               <input
@@ -80,14 +80,14 @@ function SignUp() {
               />
             </div>
             <div className="confirm-password-group">
-              <div className="confirm-password-sign sign">Confirm Password</div>
+              <div className="sign-up-confirm-password-sign sign-up-sign">Confirm Password</div>
               <span
                 className="confirm-password-visibility"
                 onClick={() => {
                   setConfirmPasswordVisibility(!confirmPasswordVisibility);
                 }}
               >
-                <img src={`${confirmPasswordVisibility ? visibility_on : visibility_off}`} alt="" />
+                <img className="password-visibility-icon" src={`${confirmPasswordVisibility ? visibility_on : visibility_off}`} alt="" />
               </span>
               {/* CONFIRM PASSWORD INPUT */}
               <input

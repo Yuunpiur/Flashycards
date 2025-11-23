@@ -44,17 +44,16 @@
   flex-flow: row wrap;
   align-items: center;
   justify-content: space-around;
+  width: 100%;
 
   flex-flow: nowrap column;
 
-  margin-block: 4em;
+  margin-block: 4em 1em;
 
   gap: 1rem;
-
-
 }
 
-.sign-up input, button {
+input, button {
   all: unset;
   font-family: "Space Mono", monospace;
   font-weight: 550;
@@ -67,6 +66,14 @@
   background-color: rgb(238, 238, 238);
   border-radius: 5px;
 }
+
+@media (max-width: 410px) {
+  input, button {
+    width: 300px;
+  }
+}
+
+
 
 .error-message
 {
@@ -119,7 +126,6 @@
     gap: 1rem;
 }
 
-
 .sign-up-button
 {
     width: 300px;
@@ -132,12 +138,19 @@
     cursor: pointer;
     background-color:#FDD400;
 
-    border-radius: 4px;
+    border-radius: 50px;
     border: 0.5px solid black;
 
     transition: 0.2s;
     margin-top: 5em;
 
+}
+
+@media (max-width: 410px) {
+  .sign-up-button
+  {
+    width: 250px;
+  }
 }
 
 a
@@ -148,7 +161,6 @@ a
 
 .sign-up-button:hover
 {
-    border-radius: 4px;
     border: 0;
     background-color: #eeeeee;
     transform: translateY(-2px);
@@ -166,7 +178,7 @@ a
 }
 
 
-.sign{
+.sign-up-sign{
   margin-bottom: 0.3em;
   font-weight: 600;
 }
@@ -195,4 +207,11 @@ a
    top: 45px;
    right: 5px;
 
+}
+
+form .password-visibility-icon
+{
+  cursor: pointer;
+  position: relative;
+  bottom: 4px;
 }
