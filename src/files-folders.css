@@ -1,10 +1,8 @@
 
-
-
 /* ! PARENT FOLDERS BOX - GROUP*/
 .rectangle-2.files-folders {
   height: 77vh;
-   overflow-y: auto;
+  overflow-y: auto;
   margin: 0;
   width: 100%;
   background-color: rgb(247, 247, 247);
@@ -14,17 +12,12 @@
   overflow-x: hidden;
  
   display: flex;
-  align-items: stretch;;
+  align-items: stretch;
   gap: 1rem;
   flex-flow: row wrap;
   padding: 1rem;
   background-color: rgb(250, 250, 250);
 }
-
-
-
-
-
 
 /* ! FOLDERS */
 .file-1
@@ -36,18 +29,10 @@
   border-radius: 10px;
 }
 
-.title
-{
-  height: 50%;
-  display: flex;
-  align-items: center;
-  margin-left: 1em
-}
-
 .folder-color
 {
-  background-color: #FFD400;
-  height: 50%;
+  background-color: #ff0000;
+  height: 35%;
   width: 100%;
   border-radius: 10px 10px 0 0;
 }
@@ -61,14 +46,40 @@
   }
 }
 
-.title {
+.title 
+{
+  font-weight: bold;
+  font-size: 1.3rem;
+  overflow-x: auto;
+}
 
-  padding-block: 0.4em;
-  padding-inline: 1em;
-  border-radius: 5px;
+.total-topics-count
+{
+  font-size: 0.9rem;
+}
 
-  margin-bottom: 1rem;
-  transition: 0.3s;
+.folder-details-container
+{
+  padding: 1em;
 }
 
 
+/* !!! FOLDER ICON WHEN THERE ARE NO FOLDERS */
+
+.message-folder-empty img 
+{
+  
+  padding: 1em;
+}
+
+.message-folder-empty
+{
+  width: 100%;
+  height: 70vh;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+
+}

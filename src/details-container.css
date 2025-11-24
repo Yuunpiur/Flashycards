@@ -32,7 +32,7 @@
 .folder-info.move-up {
   display: flex;
   visibility: visible;
-  transform: translateY(0);
+  transform: translateY(-50px);
 }
 
 .folder-name {
