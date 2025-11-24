@@ -27,7 +27,7 @@ function FlashCardTerminal() {
         </div>
         <div className="save-settings">
           <button className="vacant1"></button>
-          <button className="vacant2"></button>
+
           <button className="add-flashcard-btn">Save</button>
         </div>
 

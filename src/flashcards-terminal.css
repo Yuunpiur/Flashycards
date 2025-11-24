@@ -30,7 +30,7 @@
   overflow-x: hidden;
   overflow-y: auto;
   overflow-wrap: break-word;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   scrollbar-width: thin;
   scrollbar-color: rgb(107, 107, 107) transparent;
   margin-top: 1em
@@ -46,6 +46,7 @@
   height: 90px;
   background-color: white;
   border: 2px solid #dedede;
+
   width: 900px;
 
   border-radius: 50px;
@@ -57,7 +58,8 @@
 }
 
 .save-settings > button {
-  background-color: #c2c2c2;
+  background-color: #16305a;
+    color: white;
 
   height: 50%;
   width: 150px;
@@ -71,9 +73,6 @@
 
 }
 
-.save-settings > button:hover {
-  background-color: #75d678;
-}
 
 
 @media (max-width: 930px)
@@ -87,7 +86,7 @@
 .recent-flashcard-tag
 {
   width: 100%;
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
