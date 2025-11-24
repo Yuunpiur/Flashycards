@@ -26,7 +26,7 @@ function FilesFolder() {
           <div className="scroll-content-folders">
             {folderIsEmpty ? (
               <div className="message-folder-empty">
-                <img src={folderIcon} alt="" width={200} height={200} />
+                <img src={folderIcon} alt="" width={190} height={190} />
                 This page is empty, add some folders
               </div>
             ) : null}

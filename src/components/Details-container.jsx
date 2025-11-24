@@ -1,24 +1,25 @@
 import { useState } from "react";
 import "../details-container.css";
 
-function DetailsContainer({ blur, setBlur, folderName, setFolderName, category, setFolderIsEmpty }) {
+function DetailsContainer({ blur, setBlur, folderName, setFolderName, category, setFolderIsEmpty, topics, setTopic, setTopicIsEmpty}) {
   const [text, setText] = useState("");
 
   const askFolder = () => {
-    // if the title is too long
-    if (text.length > 17) {
-      return text.slice(0, 14).concat("...");
-    } else {
-      return text === "" || text === null ? "Unnamed Folder" : text;
-    }
+    return text === "" || text === null ? "Unnamed Folder" : text;
   };
   const addFolder = () => {
-    setFolderIsEmpty(false);
-    setFolderName([...folderName, askFolder()]);
+    console.log("WORKING");
+    if (category === "folders") {
+      setFolderIsEmpty(false);
+      setFolderName([...folderName, askFolder()]);
+    } else if (category === "topics") {
+      setTopicIsEmpty(false);
+      setTopic([...topics, askFolder()]);
+    }
     setText("");
   };
   return (
-    <>
+    <div className="folder-info-container">
       {/* MOVE BOX UP WHEN BLUR */}
       <div className={`folder-info ${blur ? "move-up" : ""}`}>
         {/* TYPE THE NAME OF A FOLDER */}
@@ -43,7 +44,7 @@ function DetailsContainer({ blur, setBlur, folderName, setFolderName, category, 
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

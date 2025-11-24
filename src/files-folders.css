@@ -48,9 +48,12 @@
 
 .title 
 {
+  height: 35px;
   font-weight: bold;
   font-size: 1.3rem;
-  overflow-x: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .total-topics-count
@@ -75,6 +78,7 @@
 .message-folder-empty
 {
   width: 100%;
+  font-size: 0.8rem;
   height: 70vh;
   opacity: 0.8;
   display: flex;
