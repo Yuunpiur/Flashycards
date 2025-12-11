@@ -1,0 +1,51 @@
+----- TIPS ------
+* Calm down
+* Make reusable componenents along the way
+* Reuse components 
+* Reuse backend codes
+* Error handling when needed
+* Add error handlings
+
+---- NOW ----
+- Validating the token -> Pulsy vs zustant??
+-
+- Modify error handlings
+
+Micro shiz
+- PASSWORD
+ - Add 8 chars minimum
+ - Weak to strong password checker
+ - login limit
+ - login is leaking user enumeration timing
+
+CRUD OPERATIONS FOR FOLDERS, TOPICS, AND FLASHCARDS
+- Make the user add folders, topics and flashcards.. then save it from the database, 
+
+- Connect it to a cloud database
+
+
+
+Design [UI]
+1. Create a liquid loading using rive
+
+ADD: User folders, topics and flashcards database
+1. Add another table for folders, topics, flashcards 
+2. Let the user add his folders, flashcards and topics [ofc update also the db]
+
+DESIGN [UI]
+1. Add folders, topics, and flashcards quantity [UI]
+
+
+DELETE: Delete folders, [UI & Backend] 
+1. Design delete buttons
+2. Delete folders.. from db
+
+UPDATE
+
+
+PROFILE PAGE FOR USE
+
+
+
+
+

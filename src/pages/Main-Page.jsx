@@ -1,4 +1,12 @@
+import { useEffect } from "react";
+
 function MainPage() {
+  /* useEffect(() => {
+    const reqOptions = {
+      method: 
+    }
+  }, []); */
+
   return (
     <>
       <div className="rectangle-2" id="rectangle-2">

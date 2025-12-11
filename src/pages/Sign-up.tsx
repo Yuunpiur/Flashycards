@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../sign-up.css";
 import { useState } from "react";
 import visibility_off from "../Pics/password/visibility-off.svg";
-import visibility_on from "../Pics/password/visibility-on.svg";
+import visibility_on  from "../Pics/password/visibility-on.svg"; 
+import { FormEvent } from "react";
 
 function SignUp() {
   const [userName, setUsername] = useState("");
@@ -13,6 +14,7 @@ function SignUp() {
   const [passwordVisibility, setPasswordVisibility] = useState(false);
   const [confirmPasswordVisibility, setConfirmPasswordVisibility] = useState(false);
 
+  const navigate = useNavigate();
   const saveData = async () => {
     try {
       const requestOptions = {
@@ -28,16 +30,33 @@ function SignUp() {
         setUserNameExist(true);
       } else {
         setUserNameExist(false);
+        navigate("/Main-page");
       }
     } catch (error) {
       console.error(error);
     }
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     saveData();
   };
+
+  /* const checkPasswordStrength = (password) => {
+    if (password === "" || password === undefined) {
+      return;
+    }
+    if (password.length < 8) {
+      return "Password should be at least 8 characters!";
+    }
+    // Checking for uppercase, lower case and etc.. below
+    else 
+    {
+      let strengthScore = 0;
+      if(/[A-Z]/.test(password))
+
+    }
+  }; */
 
   return (
     <>
@@ -78,6 +97,7 @@ function SignUp() {
                 placeholder="Enter your password"
                 onChange={(e) => setPassword(e.target.value)}
               />
+              {/* <div className="password-strength">{checkPasswordStrength(password)}</div> */}
             </div>
             <div className="confirm-password-group">
               <div className="sign-up-confirm-password-sign sign-up-sign">Confirm Password</div>

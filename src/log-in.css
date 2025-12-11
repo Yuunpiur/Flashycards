@@ -12,7 +12,7 @@
 
 .parent-container {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100dvh;
 
   background-color: #FDD400;
 
@@ -183,7 +183,8 @@
 .login-sign {
   margin-bottom: 0.5em;
   width: 360px;
-  font-weight: 600;;
+  font-weight: 600;
+  ;
 
 }
 

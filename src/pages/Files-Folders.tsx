@@ -1,5 +1,4 @@
 import "../files-folders.css";
-import addFolderIcon from "#folder-icon";
 import DetailsContainer from "#components/Details-container.jsx";
 import Searchbar from "#components/Searchbar.jsx";
 import folderIcon from "../Pics/no-category/empty-folder.svg";
@@ -8,19 +7,17 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function FilesFolder() {
+
   const [blur, setBlur] = useState(false);
-  const [folderName, setFolderName] = useState([]);
+  const [folderName, setFolderName] = useState<string[]>([]);
   const [folderIsEmpty, setFolderIsEmpty] = useState(folderName.length === 0);
-  console.log();
   // move the folder info when clicked
   return (
     <>
       {/* BLUR THE BACKGROUND */}
       <div className={`files-folders-container ${blur ? "blur" : ""}`}>
         <div className="selection-bar">
-          <Searchbar icon={addFolderIcon} blur={blur} setBlur={setBlur} />
-
-          {/*   <button className="search-button">SEARCH</button> */}
+          <Searchbar category={"folder"} setBlur={setBlur} />
         </div>
         <div className="rectangle-2 files-folders" id="rectangle-2">
           <div className="scroll-content-folders">
@@ -47,10 +44,10 @@ function FilesFolder() {
       <DetailsContainer
         blur={blur}
         setBlur={setBlur}
-        folderName={folderName}
-        setFolderName={setFolderName}
+        titles={folderName}
+        setTitle={setFolderName}
         category={"folders"}
-        setFolderIsEmpty={setFolderIsEmpty}
+        setTitleIsEmpty={setFolderIsEmpty}
       />
     </>
   );

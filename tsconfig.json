@@ -2,8 +2,11 @@
   "extends": "@tsconfig/node22/tsconfig.json",
   "compilerOptions": {
     "outDir": "./dist",
-    "rootDir": "./"
+    "rootDir": "./",
+    "types" : ["vite/client", "node"],
+    "jsx": "react-jsx",
+    "lib": ["DOM"]
   },
-  "include": ["**/*.ts"],
-  "exclude": ["dist"]
+  "include": ["**/*.ts", "src", "globals.d.ts"],
+  "exclude": ["dist"],
 }

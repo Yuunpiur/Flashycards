@@ -1,41 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    font-family: "Space Mono", monospace;
-    font-weight: 400;
-    font-style: normal;
+  margin: 0;
+  padding: 0;
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
 }
 
 
-.flashycards-logo
-{
-    height: 100%;
-    display: flex;
-    justify-content: end;
-    align-items: end;
+.flashycards-logo {
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: end;
 }
 
 
 .sign-up-container {
-    width: 450px;
-    min-height: 100vh;
-    background-color: white;
+  width: 450px;
+  min-height: 100dvh;
+  background-color: white;
 }
 
 @media (max-width: 800px) {
-  .flashycards-logo
-  {
+  .flashycards-logo {
     display: none;
   }
 
-  .sign-up-container
-  {
+  .sign-up-container {
     width: 100%;
   }
 
-  
+
 }
 
 .sign-up {
@@ -53,7 +50,8 @@
   gap: 1rem;
 }
 
-input, button {
+input,
+button {
   all: unset;
   font-family: "Space Mono", monospace;
   font-weight: 550;
@@ -68,151 +66,143 @@ input, button {
 }
 
 @media (max-width: 410px) {
-  input, button {
+
+  input,
+  button {
     width: 300px;
   }
 }
 
 
 
-.error-message
-{
+.error-message {
   visibility: hidden;
   margin-top: 0.5em;
 }
 
-.error-message.activate
-{
+.error-message.activate {
   visibility: visible;
   position: static;
   color: red;
 }
 
-.username-exist-message
-{
-  
+.username-exist-message {
+
   position: static;
   color: red;
   visibility: hidden;
 }
 
-.username-exist-message.activate
-{
+.username-exist-message.activate {
   visibility: visible;
 }
 
 
 
-.sign-up > * >*:focus
-{
+.sign-up>*>*:focus {
   background-color: white;
   border: 1px solid #FDD400;
   transition: 0.3s;
 }
 
-.log-in-link
-{
-    display: flex;
-    justify-content: center;
+.log-in-link {
+  display: flex;
+  justify-content: center;
 }
 
-.login-button
-{
+.login-button {
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column wrap;
-    gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  gap: 1rem;
 }
 
-.sign-up-button
-{
-    width: 300px;
-    height: 50px;
-    font-size: 1.5rem;
+.sign-up-button {
+  width: 300px;
+  height: 50px;
+  font-size: 1.5rem;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    background-color:#FDD400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #FDD400;
 
-    border-radius: 50px;
-    border: 0.5px solid black;
+  border-radius: 50px;
+  border: 0.5px solid black;
 
-    transition: 0.2s;
-    margin-top: 5em;
+  transition: 0.2s;
+  margin-top: 5em;
 
 }
 
 @media (max-width: 410px) {
-  .sign-up-button
-  {
+  .sign-up-button {
     width: 250px;
   }
 }
 
 
-a
-{
-    text-decoration: none;
-    color: black;
+a {
+  text-decoration: none;
+  color: black;
 }
 
-.sign-up-button:hover
-{
-    border: 0;
-    background-color: #eeeeee;
-    transform: translateY(-2px);
+.sign-up-button:hover {
+  border: 0;
+  background-color: #eeeeee;
+  transform: translateY(-2px);
 }
 
-.gold-login
-{
+.gold-login {
   transition: 0.2s;
 }
 
-.gold-login:hover
-{
+.gold-login:hover {
   color: #FDD400;
 
 }
 
 
-.sign-up-sign{
+.sign-up-sign {
   margin-bottom: 0.3em;
   font-weight: 600;
 }
 
-.password-group
-{
+.password-group {
   position: relative;
 }
 
-.password-visibility
-{
-   position: absolute;
-   top: 45px;
-   right: 5px;
+.password-visibility {
+  position: absolute;
+  top: 45px;
+  right: 5px;
 
 }
 
-.confirm-password-group
-{
+.confirm-password-group {
   position: relative;
 }
 
-.confirm-password-visibility
-{
-   position: absolute;
-   top: 45px;
-   right: 5px;
+.confirm-password-visibility {
+  position: absolute;
+  top: 45px;
+  right: 5px;
 
 }
 
-form .password-visibility-icon
-{
+form .password-visibility-icon {
   cursor: pointer;
   position: relative;
   bottom: 4px;
+}
+
+
+
+
+.password-strength {
+  font-size: 0.8rem;
+  color: red;
 }
