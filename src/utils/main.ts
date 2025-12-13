@@ -1,4 +1,4 @@
-// ! Basic types
+/* // ! Basic types
 let myName: string = "Christopher";
 let myAge: number = 19; // this is already inferred by ts, try Ctr + k + I
 let isPlayingGame: boolean = true;
@@ -31,10 +31,11 @@ const user1: userTypes = {
 // ? Objects as maps
 // ? Utility types record
 const userInfo: Record<string, number> = {
-  "richard": 452342,
-  "karen":  4324325
-}
-userInfo["carlo"] = 432423;
+  richard: 452342,
+  karen: 4324325,
+};
+userInfo["carlo"] = 432423; */
 
-
- 
+export const fetchData = (url: string) => {
+  Promise.resolve("HELLO");
+};

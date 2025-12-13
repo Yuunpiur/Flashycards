@@ -5,8 +5,7 @@
 }
 
 
-.folder-info-container
-{
+.folder-info-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,8 +34,7 @@
   visibility: hidden;
 }
 
-.folder-info.move-up
-{
+.folder-info.move-up {
   visibility: visible;
   animation: popup 0.25s ease;
 }
@@ -51,14 +49,12 @@
     opacity: 1;
     transform: scale(1);
   }
-  
+
 }
 
 
-@media (max-width: 520px)
-{
-  .folder-info
-  {
+@media (max-width: 520px) {
+  .folder-info {
     width: 95%;
   }
 }
@@ -82,10 +78,10 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  
+
 }
 
-.folder-nav-button > * {
+.folder-nav-button>* {
   width: 20%;
   height: 40px;
   border: 2px solid black;
@@ -98,6 +94,70 @@
   cursor: pointer;
 }
 
-.folder-nav-button > *:hover {
+.folder-nav-button>*:hover {
   background-color: var(--clr--gold);
+}
+
+.colorpicker-title {
+  font-size: 0.8rem;
+  margin-left: 0.5em;
+  /* ? MAKE THE TITLE GO TO THE RIGHT */
+  margin-bottom: 0.3em;
+  font-weight: bold;
+}
+
+.options-container {
+  height: 75%;
+}
+
+.colorpicker-parent {
+  height: 50px;
+  width: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.colorpicker-parent>div {
+  width: 45px;
+  height: 45px;
+  border: 1.6px solid black;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+}
+
+.color-picker-box .react-colorful {
+  z-index: 2;
+  position: relative;
+  right: 10px;
+  height: 200px;
+  width: 330px;
+  position: relative;
+  bottom: -50px;
+  right: 5px;
+  border-radius: 50px;
+
+}
+
+
+.default-color1 {
+  background-color: red;
+}
+
+.default-color2 {
+  background-color: blue;
+}
+
+.default-color3 {
+  background-color: green;
+}
+
+.default-color4 {
+  background-color: yellow;
+}
+
+.default-color5 {
+  background-color: purple;
 }

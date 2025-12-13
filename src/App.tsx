@@ -1,8 +1,8 @@
-import MainPage from "./pages/Main-Page";
-import FilesFolders from "./pages/Files-Folders";
-import TopicsFolder from "./pages/Topics-Folder";
-import FlashcardsTerminal from "./pages/Flashcards-Terminal";
-import Navbar from "./components/Navbar";
+import MainPage from "./pages/Main-Page.tsx";
+import FilesFolders from "./pages/Files-Folders.tsx";
+import TopicsFolder from "./pages/Topics-Folder.tsx";
+import FlashcardsTerminal from "./pages/Flashcards-Terminal.tsx";
+import Navbar from "./components/Navbar.tsx";
 import LogIn from "./pages/Log-In.tsx";
 import SignUp from "#pages/Sign-up.tsx";
 import { useEffect } from "react";

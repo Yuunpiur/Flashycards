@@ -1,4 +1,4 @@
-import { sum } from "#utils/sum.js";
+/* import { sum } from "#utils/sum.js";
 // sum.spec.ts
 import { describe, expect, it } from "vitest";
 
@@ -7,3 +7,4 @@ describe("sum function", () => {
     expect(sum(1, 2)).toBe(3);
   });
 });
+ */

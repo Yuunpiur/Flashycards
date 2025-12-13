@@ -5,7 +5,9 @@
     "rootDir": "./",
     "types" : ["vite/client", "node"],
     "jsx": "react-jsx",
-    "lib": ["DOM"]
+    "lib": ["DOM"],
+    "noEmit": true,
+    "allowImportingTsExtensions": true
   },
   "include": ["**/*.ts", "src", "globals.d.ts"],
   "exclude": ["dist"],

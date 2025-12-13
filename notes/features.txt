@@ -7,6 +7,9 @@
 * Add error handlings
 
 ---- NOW ----
+- UNDERSTAND THE COLOR PICKER IMPLEMENTATION
+- APPLY THE COLORS IN THE FOLDERS BASED FROM THE COLOR PICKER
+- let the user pick a color for the folder or topic that he will save
 - Validating the token -> Pulsy vs zustant??
 -
 - Modify error handlings

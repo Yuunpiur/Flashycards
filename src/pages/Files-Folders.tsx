@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function FilesFolder() {
-
   const [blur, setBlur] = useState(false);
   const [folderName, setFolderName] = useState<string[]>([]);
   const [folderIsEmpty, setFolderIsEmpty] = useState(folderName.length === 0);

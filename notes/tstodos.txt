@@ -1,8 +1,9 @@
 !!!!! LEARN AND APPLY !!!!!
 
 ---- NOW ----
-# 1
-# APPLY 1
+# LEARN 3
+# APPLY  
 
 ---- CHAPTERS ----
-# 2
+# 4
+# 5

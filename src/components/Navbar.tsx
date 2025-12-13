@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import lightningIcon from "#logo";
+import lightningIcon from "../Pics/logo-Icon/lightning-icon.svg";
 import mainPageIcon from "../Pics/nav-icons/main-page-icon.svg";
-import filesIcon from "../Pics/nav-icons/files-icon.svg"
+import filesIcon from "../Pics/nav-icons/files-icon.svg";
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -25,11 +25,11 @@ function Navbar() {
         <nav className={`menu ${click ? "move-right" : ""}`} id="navMenu">
           <ul>
             <Link to="/Main-Page" className="main-page nav-text">
-              <img src={mainPageIcon} alt="" width={30} height={30}/>
+              <img src={mainPageIcon} alt="" width={30} height={30} />
               Main Page
             </Link>
             <Link to="/Files-Folders" className="files-folders nav-text">
-              <img src={filesIcon} alt="" width={30} height={30}/>
+              <img src={filesIcon} alt="" width={30} height={30} />
               Files and Folders
             </Link>
           </ul>
